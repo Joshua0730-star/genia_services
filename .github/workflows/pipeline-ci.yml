@@ -4,8 +4,7 @@ name: Pipeline CI/CD MlOps ## <-- nombre del workflow
 on:
   pull_request: 
     branches: [ dev ] ## rama que aplicaremos este workflow
-## eventos que haremos
-Jobs: 
+jobs: 
   build_and_test:
     runs-on: ubuntu-latest
     steps:
