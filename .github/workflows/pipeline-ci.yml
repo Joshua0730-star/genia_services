@@ -1,25 +1,26 @@
-name: Pipeline CI/CD MlOps ## <-- nombre del workflow
+name: Pipeline CI/CD MlOps
 
-## evento disparador del wokrflow
 on:
-  pull_request: 
-    branches: [ dev ] ## rama que aplicaremos este workflow
-jobs: 
+  pull_request:
+    branches: [ dev ]
+
+jobs:
   build_and_test:
     runs-on: ubuntu-latest
     steps:
-      ## 1. paso: clonar el repositorio
+      # 1. paso: clonar el repositorio
       - name: Check repository
-        uses: actions/checkout@v4 
-      ## 2. paso: configurar python
+        uses: actions/checkout@v4
+
+      # 2. paso: configurar python
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11.9'
           cache: 'pip'
+
       - name: Install dependencies
         run: pip install -r ./python/credit_scoring/requirements.txt
 
       - name: Run Tests
         run: pytest ./python/credit_scoring/tests/test_model_creation.py
-      
