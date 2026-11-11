@@ -5,5 +5,11 @@ __pycache__
 .env
 env
 *mlflow.db
+.mlflow/
 *mlruns/
 *mlruns.db
+/config.local
+/tmp
+/cache
+datasets/genia_services_csv_german_credit_risk_v1.0.0_training_20260721
+images/
