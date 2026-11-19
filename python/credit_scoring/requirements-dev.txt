@@ -1,0 +1,6 @@
+-r requirements.txt
+
+# Sobrescribe torch con el índice de CUDA para tu RTX local
+--extra-index-url https://download.pytorch.org/whl/cu130
+torch==2.12.0+cu130
+torchvision==0.27.0+cu130
